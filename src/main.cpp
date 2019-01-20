@@ -3,6 +3,11 @@
 #include "drivers/display/ST7565.h"
 
 DigitalOut myled(LED1);
+Ticker     one_ms;
+
+void tick_cb() {
+	lv_tick_inc(1);
+}
 
 void draw_hello_world(void) {
 	/*Create a Label on the currently active screen*/
@@ -19,6 +24,8 @@ void draw_hello_world(void) {
 
 int main() {
 	lv_init(); // init lvgl
+
+	one_ms.attach(&tick_cb, 0.001); // setup ticker @ 1ms interval
 
 	st7565_init(); // init display driver
 
