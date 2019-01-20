@@ -4,7 +4,7 @@
 #include "mbed.h"
 
 
-/* GLOBAL PINSSSSSS (spi pins are the same ones used on the S6 to communicate w/ GP30 )*/
+/* GLOBAL PINSSSSSS */
 DigitalOut cmd_data(PB_13);
 DigitalOut reset(PC_4);
 DigitalOut spi_cs(PA_15);
