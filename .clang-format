@@ -1,0 +1,36 @@
+# This file contains the profile(s) used for clang-format. It uses Google coding
+# style with some additional rules enforced. Currently, only C++ is detected, but
+# additional profiles can be added for different languages.
+
+BasedOnStyle: LLVM 
+
+# clang-format profile for C++ files
+---
+Language: Cpp
+ColumnLimit: 200  # Maximum 200 characters per line
+BreakBeforeBraces: Attach   # Attach style braces (braces start on the same line as statements)
+AllowShortIfStatementsOnASingleLine: false # Do not shorten conditional statements
+AllowShortLoopsOnASingleLine: true # Do not shorten loops
+AllowShortFunctionsOnASingleLine: false   # Do not shorten functions
+ReflowComments: false   # Do not break comments to a new line even if it exceeds 100 chars line limit
+SortIncludes: false # Do not sort include statements
+NamespaceIndentation: All  # Indent nested namespace
+IndentCaseLabels: true  # Indent cases blocks inside switch statement
+SpacesBeforeTrailingComments: 1 # The number of spaces before //
+UseTab: ForIndentation # Use tab for white spaces with width equals to tab size
+IndentWidth: 8
+TabWidth: 8
+AccessModifierOffset: 0
+AlignAfterOpenBracket: Align
+AlignConsecutiveAssignments: true
+AlignConsecutiveDeclarations: true
+AlignTrailingComments: true
+BinPackArguments: false
+BinPackParameters: false
+Cpp11BracedListStyle: true
+ExperimentalAutoDetectBinPacking: true
+BreakConstructorInitializersBeforeComma: true
+SpacesInContainerLiterals: true
+DerivePointerAlignment: false
+PointerAlignment: Right
+
