@@ -115,10 +115,10 @@ void st7565_init(void)
     st7565_command(CMD_SET_POWER_CONTROL | 0x6);
     LV_DRV_DELAY_MS(50);
 
-    st7565_command(CMD_SET_POWER_CONTROL | 0x7);
+    st7565_command(CMD_SET_POWER_CONTROL | 0x2f);
     LV_DRV_DELAY_MS(10);
 
-    st7565_command(CMD_SET_RESISTOR_RATIO | 0x6);
+    st7565_command(CMD_SET_RESISTOR_RATIO | 0x4);
 
     st7565_command(CMD_DISPLAY_ON);
     st7565_command(CMD_SET_ALLPTS_NORMAL);
@@ -131,7 +131,7 @@ void st7565_init(void)
 
 	LV_DRV_SET_FREQUENCY(ST7565_BAUD);
 
-    memset(lcd_fb, 0x00, sizeof(lcd_fb));
+    memset(lcd_fb, 0xff, sizeof(lcd_fb));
 }
 
 
@@ -275,7 +275,7 @@ static void st7565_sync(int32_t x1, int32_t y1, int32_t x2, int32_t y2)
 static void st7565_command(uint8_t cmd)
 {
     LV_DRV_DISP_CMD_DATA(ST7565_CMD_MODE);
-    LV_DRV_DISP_SPI_WR_BYTE((uint32_t) cmd);
+    LV_DRV_DISP_SPI_WR_BYTE(cmd);
 }
 
 /**

@@ -33,7 +33,7 @@ void spi_cs_set(int val) {
 
 // write a single byte but mbed SPI write doesnt have one for writing
 // a single byte so we just write it as a 32 bits integer
-void spi_wr(uint32_t data) {
+void spi_wr(uint8_t data) {
 	spi.write(data);
 }
 
